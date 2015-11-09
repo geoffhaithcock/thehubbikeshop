@@ -42,12 +42,13 @@ body {
 
 .well {
   height: 100%;
-
-  background: -webkit-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* W3C */
+  color:#000;
+  
+  background: -webkit-linear-gradient(90deg, #525252 10%, #3d72b4 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #525252 10%, #3d72b4 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #525252 10%, #3d72b4 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #525252 10%, #3d72b4 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #525252 10%, #3d72b4 90%); /* W3C */
         
   }
 
@@ -346,14 +347,31 @@ top {
     left:0;opacity:1;z-index:1;
 }
 .thumbnail {
-  
-  background: -webkit-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* W3C */
+  min-height:500px; 
+  height:500px; 
+  color:#000;
+  background: -webkit-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* W3C */
         
+         
 }
+.thumbnail
+  img {
+    width:200px;
+    height:200px;
+  }
+
+
 .panel {
   text-align: center;
+  color:#000;
+  background: -webkit-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* W3C */
+        
 }

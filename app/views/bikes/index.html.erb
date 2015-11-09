@@ -2,18 +2,20 @@
 
 <div class="container-fluid">
   <div class="well">
+    <div class="panel">
     <h1>Our Bikes</h1>
     <p><%= link_to new_bike_path do %>
       <span class="glyphicon glyphicon-plus"></span> Add
       <% end %>
     </p>
+    </div>
   </div>
     <% @bikes.each do |bike| %>
       <div class="row-fluid">
         <div class="col-xs-4">
           <div class="thumbnail">
             <% if bike.avatar.exists? != nil %>
-              <%= image_tag bike.avatar.url(:medium), class:"img-responsive" %>
+              <%= image_tag bike.avatar.url, class:"img-responsive center-block" %>
               <% end %>
             <div class="caption">
               <h2><%= link_to bike.name.titleize, bike %></h2>

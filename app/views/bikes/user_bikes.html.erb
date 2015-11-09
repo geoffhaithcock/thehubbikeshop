@@ -9,7 +9,7 @@
           <%= link_to bike.name.titleize, bike %>
             <div class="well">
               <% if bike.avatar.exists? != nil %>
-              <%= image_tag bike.avatar.url(:medium), class:"img-responsive" %>
+              <%= image_tag bike.avatar.url(:medium), class:"img-responsive center-block" %>
               <% end %>
               <h2><%= link_to bike.name, bike %></h2>
               <h3>$<%= bike.price %></h3>

@@ -7,11 +7,11 @@
     <div class="col-md-12">
       <div class="panel panel-inverse">
         <div class="panel-heading">
-          <%= link_to @bike.name.titleize, bike %>
+          <h3><%= link_to @bike.name.titleize, bike %></h3>
             <div class="well">
-                <h3><%= review.title %></h3>
+                <h3><%= review.title.titleize %></h3>
                 <h4><%= review.user.username %></h4>
-                <p><%= review.review_entry.titleize %></p>
+                <p><%= review.review_entry.capitalize %></p>
                 <p><% "#{review.rating}".to_i.times do %>
                 <span class="glyphicon glyphicon-star"></span>
                 <% end %></p>
