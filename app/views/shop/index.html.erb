@@ -1,0 +1,30 @@
+<div id="myCarousel" class="carousel carousel-fade">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active carousel-1">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Dream Cruisers</h1>
+          <p>Show off your Favorites. Get Ideas for your Next Big Build. Add to Your Collection. Join the Crusin' Community at The Hub.</p>
+          <p><%= link_to 'Our Bikes', bikes_path, class:"btn btn-large btn-default" %></p>
+        </div>
+      </div>
+    </div>
+    <div class="item carousel-2">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Nuts and Bolts</h1>
+          <p>Get Greasy. Tell the Truth. Avoid Potholes Ahead. Find out the Dirt and Tell It.</p>
+          <p><p><%= link_to 'Bike Reviews', reviews_path, class:"btn btn-large btn-default" %></p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+        

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <div class="well">
+    <h1>Our Bikes</h1>
+    <p><%= link_to new_bike_path do %>
+      <span class="glyphicon glyphicon-plus"></span> Add
+      <% end %>
+    </p>
+  </div>
+    <% @bikes.each do |bike| %>
+      <div class="row-fluid">
+        <div class="col-xs-4">
+          <div class="thumbnail">
+            <% if bike.avatar.exists? != nil %>
+              <%= image_tag bike.avatar.url(:medium), class:"img-responsive" %>
+              <% end %>
+            <div class="caption">
+              <h2><%= link_to bike.name.titleize, bike %></h2>
+              <h3>$<%= bike.price %></h3>
+              <p><%= bike.description.titleize[0..120] %>...[<%= link_to"More", bike %>]
+              </p>
+              <% if current_user.id == bike.user.id %>
+                    <h4><%= link_to edit_bike_path(bike) do %>
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        <% end %>
+                        <%= link_to bike, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <span class="glyphicon glyphicon-trash"></span>
+                        <% end %>
+                    </h4>
+              <% end %>      
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>    
+    

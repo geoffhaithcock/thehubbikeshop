@@ -1,0 +1,19 @@
+<div class="container">
+  <% current_user.bikes.each do |bike| %>
+    <div class="well">
+      <% if bike.avatar.exists? != nil %>
+        <%= image_tag bike.avatar.url(:medium), class:"img-responsive" %>
+      <% end %>
+        <h2><%= link_to bike.name, bike %></h2>
+        <h3>$<%= bike.price %></h3>
+        <p><%= bike.description %></p>
+        <br />
+        <h4><%= link_to edit_bike_path(bike) do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+          <%= link_to bike, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+    </div>
+  <% end %>
+</div>

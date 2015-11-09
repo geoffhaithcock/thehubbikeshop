@@ -1,0 +1,29 @@
+<div class="well">
+  <h1><%=@user.username %>'s Bikes</h1>
+</div>
+<div class="row">
+  <% @user.bikes.each do |bike| %>
+    <div class="col-md-12">
+      <div class="panel panel-inverse">
+        <div class="panel-heading">
+          <%= link_to bike.name.titleize, bike %>
+            <div class="well">
+              <% if bike.avatar.exists? != nil %>
+              <%= image_tag bike.avatar.url(:medium), class:"img-responsive" %>
+              <% end %>
+              <h2><%= link_to bike.name, bike %></h2>
+              <h3>$<%= bike.price %></h3>
+              <p><%= bike.description %></p>
+              <br />
+              <h4><%= link_to edit_bike_path(bike) do %>
+                <span class="glyphicon glyphicon-pencil"></span>
+                <% end %>
+                <%= link_to bike, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <span class="glyphicon glyphicon-trash"></span>
+                <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

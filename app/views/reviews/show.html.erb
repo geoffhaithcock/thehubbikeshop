@@ -1,0 +1,28 @@
+<% if notice != nil %>
+  <p id="notice" class="alert alert-success" role="alert">
+    <%= notice %>
+  </p>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="well">
+      <h3><%= link_to @bike.name.titleize, @bike %>...<%= @review.title.titleize %></h3>
+        <h4><strong><%= @review.user.username %></strong> said: </h4>
+          <p><%= @review.review_entry.titleize %></p>
+          <p><% "#{@review.rating}".to_i.times do %>
+            <span class="glyphicon glyphicon-star"></span>
+            <% end %></p>
+          <p><span class="posted-at"><%= @review.created_at.strftime('%m/%d/%Y %I:%m:%p') %></span></p>
+          <% if current_user.id == @review.user.id %>
+            <h4><%= link_to edit_review_path(@review) do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+                <% end %>
+              <%= link_to @review, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+                <% end %></h4>
+          <% end %>
+    </div>
+  </div>    
+</div> 
+

@@ -1,0 +1,31 @@
+<div class="well">
+  <h1><%=@user.username %>'s Reviews</h1>
+</div>
+
+<div class="row">
+  <% @user.reviews.each do |review| %>
+    <div class="col-md-12">
+      <div class="panel panel-inverse">
+        <div class="panel-heading">
+          <%= link_to @bike.name.titleize, bike %>
+            <div class="well">
+                <h3><%= review.title %></h3>
+                <h4><%= review.user.username %></h4>
+                <p><%= review.review_entry.titleize %></p>
+                <p><% "#{review.rating}".to_i.times do %>
+                <span class="glyphicon glyphicon-star"></span>
+                <% end %></p>
+                <p><span class="posted-at"><%= review.created_at.strftime('%m/%d/%Y %I:%M:%p') %></span></p> 
+                <br />
+                <h4><%= link_to edit_review_path(review) do %>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  <% end %>
+                  <%= link_to review, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                  <% end %></h4>
+            </div>
+        </div>
+      </div>
+    </div>    
+  <% end %>
+</div>
