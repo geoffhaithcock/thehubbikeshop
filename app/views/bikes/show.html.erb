@@ -3,8 +3,6 @@
     <%= notice %>
   </p>
 <% end %>
-
-
            
 <div class="row">
   <div class="col-md-12">
@@ -12,17 +10,17 @@
       <div class="panel-heading">
         <h2><strong><%= @bike.name.titleize %></strong><br />$<%= @bike.price %></h2>
           <div class="well">
-              <% if @bike.avatar.exists? != nil %>
-              <%= image_tag @bike.avatar.url(:medium), class:"img-responsive center-block" %>
+            <% if @bike.avatar.exists? != nil %>
+            <%= image_tag @bike.avatar.url(:medium), class:"img-responsive center-block" %>
+            <% end %>
+            <p><%= @bike.description.capitalize %></p>
+              <% if current_user.id == @bike.user.id %>
+              <h4><%= link_to edit_bike_path(@bike) do %>
+                <span class="glyphicon glyphicon-pencil"></span>
               <% end %>
-              <p><%= @bike.description.capitalize %></p>
-                <% if current_user.id == @bike.user.id %>
-                  <h4><%= link_to edit_bike_path(@bike) do %>
-                  <span class="glyphicon glyphicon-pencil"></span>
-                  <% end %>
-                  <%= link_to @bike, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                  <% end %></h4>
+              <%= link_to @bike, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              <% end %></h4>
           </div> 
         <% end %>  
       </div>            
@@ -62,7 +60,7 @@
   <div class="col-md-12">
     <div class="well">
      <h3> Leave a Review </h3>
-        <%= render 'reviews/form' %>
+      <%= render 'reviews/form' %>
     </div>
   </div>  
 </div>
@@ -70,7 +68,7 @@
   <div class="col-md-12">
     <div class="well">
       <div class="actions form-group">
-         <h6> <%= link_to 'Back to Our Bikes', bikes_path, class:"btn btn-default" %></h6>
+        <h6> <%= link_to 'Back to Our Bikes', bikes_path, class:"btn btn-default" %></h6>
       </div>  
     </div>
   </div>  
